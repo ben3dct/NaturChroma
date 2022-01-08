@@ -16,6 +16,19 @@ int fg()
     string YOUR_ACCESS_KEY;
     string ECity;
     
+    SetConsoleDisplayMode(GetStdHandle(STD_OUTPUT_HANDLE), CONSOLE_FULLSCREEN_MODE, 0);
+
+    HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    GetConsoleScreenBufferInfo(hstdout, &csbi);
+
+    csbi.dwSize.X = csbi.dwMaximumWindowSize.X;
+    csbi.dwSize.Y = csbi.dwMaximumWindowSize.Y;
+    SetConsoleScreenBufferSize(hstdout, csbi.dwSize);
+
+    HWND x = GetConsoleWindow();
+    ShowScrollBar(x, SB_BOTH, FALSE);
+    
     ifstream readkey("key.txt");
     if (readkey.is_open())
     {
