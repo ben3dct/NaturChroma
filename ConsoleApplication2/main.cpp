@@ -68,21 +68,15 @@ int fg()
         catch (const std::exception&)
         {
             SetConsoleColors(BACKGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-            std::cout << "Failed to receive Weather data from https://api.weatherstack.com. \n" << "TROUBLESHOOTING:" << std::endl;
-            std::cout << "Either the your access key is invalid or the entered city could not be found.\n";
-            std::cout << "The API key can be retrieved from https://weatherstack.com/dashboard \n";
-            std::cout << "Alternativley, the monthly usage limit has been reached. Usage can be viewed via the link above.";
+            std::cout << APIError << std::endl;
             return EXIT_FAILURE;
         }
     }
     else
     {
-        SetConsoleColors(BACKGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-        std::cout << "Failed to receive Weather data from https://api.weatherstack.com. \n" << "TROUBLESHOOTING:" << std::endl;
-        std::cout << "Either the access key is invalid or the entered city could not be found.\n";
-        std::cout << "The API key can be retrieved from https://weatherstack.com/dashboard\n \n";
-        std::cout << "Alternativley, the monthly usage limit has been reached. Usage can be viewed via the link above.";
-        return EXIT_FAILURE;
+         SetConsoleColors(BACKGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+         std::cout << APIError << std::endl;
+         return EXIT_FAILURE;
     }
 
     return EXIT_SUCCESS;
