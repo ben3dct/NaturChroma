@@ -41,5 +41,5 @@
 #define     RZRESULT_NO_MORE_ITEMS              259L
 //! General failure.
 #define     RZRESULT_FAILED                     2147500037L
-
+std::string APIError = "Failed to receive Weather data from https ://api.weatherstack.com. TROUBLESHOOTING: \n  Either the access key is invalid or the entered city could not be found.\n The API key can be retrieved from https://weatherstack.com/dashboard\n \n Alternativley, the monthly usage limit has been reached. Usage can be viewed via the link above";
 #endif
