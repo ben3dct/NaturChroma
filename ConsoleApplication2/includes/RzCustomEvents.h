@@ -196,21 +196,21 @@ BOOL My_Chroma_Implementation::example_keyboard() {
 		RZRESULT Result_Keyboard = CreateKeyboardEffect(ChromaSDK::Keyboard::CHROMA_STATIC, &Keyboard_Condition_Extreme, nullptr); // applied static lighting to keyboard
 		return Result_Keyboard;
 	}
-	else if ( WdataT > 30 && WdataT > 20)
+	else if ( WdataT > 30 || WdataT > 20)
 	{
 		ChromaSDK::Keyboard::STATIC_EFFECT_TYPE Keyboard_Condition_Moderate = {}; //Initialize
 		Keyboard_Condition_Moderate.Color = ORANGE;
 		RZRESULT Result_Keyboard = CreateKeyboardEffect(ChromaSDK::Keyboard::CHROMA_STATIC, &Keyboard_Condition_Moderate, nullptr); // applied static lighting to keyboard
 		return Result_Keyboard;
 	} 
-	else if (WdataT > 15 && WdataT < 20)
+	else if (WdataT > 15 || WdataT < 20)
 	{
 		ChromaSDK::Keyboard::STATIC_EFFECT_TYPE Keyboard_Condition_IModerate = {}; //Initialize
 		Keyboard_Condition_IModerate.Color = YELLOW;
 		RZRESULT Result_Keyboard = CreateKeyboardEffect(ChromaSDK::Keyboard::CHROMA_STATIC, &Keyboard_Condition_IModerate, nullptr); // applied static lighting to keyboard
 		return Result_Keyboard;
 	}
-	else if (WdataT > 5 && WdataT < 15)
+	else if (WdataT > 5 || WdataT < 15)
 	{
 		ChromaSDK::Keyboard::STATIC_EFFECT_TYPE Keyboard_Condition_IExtreme = {}; //Initialize
 		Keyboard_Condition_IExtreme.Color = BLUE;
